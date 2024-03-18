@@ -3,6 +3,7 @@ import { CSSProperties, forwardRef, type ForwardedRef } from 'react';
 import DataTableFooterCell from './DataTableFooterCell';
 import DataTableFooterSelectorPlaceholderCell from './DataTableFooterSelectorPlaceholderCell';
 import type { DataTableColumn, DataTableDefaultColumnProps } from './types';
+import React from 'react';
 
 const useStyles = createStyles(
   (

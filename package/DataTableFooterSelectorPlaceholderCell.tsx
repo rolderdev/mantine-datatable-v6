@@ -1,4 +1,5 @@
 import { createStyles, px } from '@mantine/core';
+import React from 'react';
 
 const useStyles = createStyles((theme) => {
   const shadowGradientAlpha = theme.colorScheme === 'dark' ? 0.5 : 0.05;

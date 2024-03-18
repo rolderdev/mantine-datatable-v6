@@ -1,6 +1,7 @@
 import { createStyles, getStylesRef } from '@mantine/core';
 import { MutableRefObject, useRef, useState } from 'react';
 import { useDataTableDragToggleColumnsContext } from './DataTableDragToggleColumns.context';
+import React from 'react';
 
 type DataTableResizableHeaderHandleProps = {
   accessor: string;

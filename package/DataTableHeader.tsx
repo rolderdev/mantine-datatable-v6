@@ -4,6 +4,7 @@ import DataTableColumnGroupHeaderCell from './DataTableColumnGroupHeaderCell';
 import DataTableHeaderCell from './DataTableHeaderCell';
 import DataTableHeaderSelectorCell from './DataTableHeaderSelectorCell';
 import type { DataTableColumn, DataTableColumnGroup, DataTableSortProps } from './types';
+import React from 'react';
 
 const useStyles = createStyles((theme) => ({
   root: {

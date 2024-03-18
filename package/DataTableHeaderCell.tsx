@@ -20,6 +20,7 @@ import { DataTableResizableHeaderHandle } from './DataTableResizableHeaderHandle
 import { DataTableColumnToggle } from './hooks';
 import type { DataTableColumn, DataTableSortProps } from './types';
 import { humanize, useMediaQueryStringOrFunction } from './utils';
+import React from 'react';
 
 const useStyles = createStyles((theme) => ({
   sortableColumnHeader: {

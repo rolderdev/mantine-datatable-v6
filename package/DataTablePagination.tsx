@@ -11,6 +11,7 @@ import { forwardRef, type CSSProperties, type ForwardedRef, type ReactNode } fro
 import DataTablePageSizeSelector from './DataTablePageSizeSelector';
 import type { DataTablePaginationProps } from './types';
 import type { WithOptional, WithRequired } from './types/utils';
+import React from 'react';
 
 const useStyles = createStyles(
   (

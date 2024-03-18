@@ -1,4 +1,5 @@
 import { Button, Group, Menu, Text, type MantineColor, type MantineSize } from '@mantine/core';
+import React from 'react';
 
 type DataTablePageSizeSelectorComponentProps = {
   size: MantineSize;
