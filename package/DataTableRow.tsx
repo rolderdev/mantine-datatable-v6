@@ -5,6 +5,7 @@ import DataTableRowExpansion from './DataTableRowExpansion';
 import DataTableRowSelectorCell from './DataTableRowSelectorCell';
 import { useRowExpansion } from './hooks';
 import type { DataTableCellClickHandler, DataTableColumn, DataTableDefaultColumnProps } from './types';
+import React from 'react';
 
 const useStyles = createStyles((theme) => {
   const baseColor = theme.colors[theme.primaryColor][6];
@@ -14,12 +15,12 @@ const useStyles = createStyles((theme) => {
     },
     selected: {
       '&&': {
-        'tr&': {
-          background: theme.colorScheme === 'dark' ? theme.fn.darken(baseColor, 0.6) : theme.fn.lighten(baseColor, 0.9),
+        'tr&': { // Rolder
+          //background: theme.colorScheme === 'dark' ? theme.fn.darken(baseColor, 0.6) : theme.fn.lighten(baseColor, 0.9),
         },
-        'table[data-striped] tbody &:nth-of-type(odd)': {
-          background:
-            theme.colorScheme === 'dark' ? theme.fn.darken(baseColor, 0.55) : theme.fn.lighten(baseColor, 0.85),
+        'table[data-striped] tbody &:nth-of-type(odd)': {// Rolder
+          //background:
+          //theme.colorScheme === 'dark' ? theme.fn.darken(baseColor, 0.55) : theme.fn.lighten(baseColor, 0.85),
         },
       },
     },

@@ -40,6 +40,7 @@ import {
 } from './hooks';
 import type { DataTableProps } from './types';
 import { differenceBy, getRecordId, humanize, uniqBy, useIsomorphicLayoutEffect } from './utils';
+import React from 'react';
 
 const EMPTY_OBJECT = {};
 
@@ -216,6 +217,8 @@ export default function DataTable<T>({
   loaderSize,
   loaderVariant,
   loaderColor,
+  loaderBgColor, // Rolder
+  loaderOpacity, // Rolder
   loadingText = '...',
   emptyState,
   noRecordsText = 'No records',
@@ -473,13 +476,13 @@ export default function DataTable<T>({
                         const targetRecords = records.filter(
                           recordIndex > lastSelectionChangeIndex
                             ? (r, index) =>
-                                index >= lastSelectionChangeIndex &&
-                                index <= recordIndex &&
-                                (isRecordSelectable ? isRecordSelectable(r, index) : true)
+                              index >= lastSelectionChangeIndex &&
+                              index <= recordIndex &&
+                              (isRecordSelectable ? isRecordSelectable(r, index) : true)
                             : (r, index) =>
-                                index >= recordIndex &&
-                                index <= lastSelectionChangeIndex &&
-                                (isRecordSelectable ? isRecordSelectable(r, index) : true)
+                              index >= recordIndex &&
+                              index <= lastSelectionChangeIndex &&
+                              (isRecordSelectable ? isRecordSelectable(r, index) : true)
                         );
                         onSelectedRecordsChange(
                           isSelected
@@ -598,6 +601,8 @@ export default function DataTable<T>({
           size={loaderSize}
           variant={loaderVariant}
           color={loaderColor}
+          bgColor={loaderBgColor} // Rolder
+          opacity={loaderOpacity} // Rolder
         />
         <DataTableEmptyState
           pt={headerHeight}

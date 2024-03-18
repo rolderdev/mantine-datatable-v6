@@ -7,17 +7,18 @@ export type DataTableLoaderProps = {
    */
   loaderBackgroundBlur?: number;
 } & (
-  | {
+    | {
       loaderSize?: never;
       loaderVariant?: never;
       loaderColor?: never;
-
+      loaderBgColor?: never // Rolder
+      loaderOpacity?: never // Rolder
       /**
        * Custom loader component to use instead of default one
        */
       customLoader?: ReactNode;
     }
-  | {
+    | {
       /**
        * Loader size; defaults to `lg`
        */
@@ -35,4 +36,4 @@ export type DataTableLoaderProps = {
 
       customLoader?: never;
     }
-);
+  );

@@ -1,5 +1,7 @@
 import { Box, createStyles, ScrollArea, ScrollAreaProps } from '@mantine/core';
-import type { ReactNode, Ref } from 'react';
+import { useViewportSize } from '@mantine/hooks';
+import React from 'react';
+import { useEffect, type ReactNode, type Ref, useState } from 'react';
 
 const useStyles = createStyles((theme) => {
   const shadowGradientAlpha = theme.colorScheme === 'dark' ? 0.5 : 0.05;
@@ -102,6 +104,19 @@ export default function DataTableScrollArea({
 }: DataTableScrollAreaProps) {
   const bottom = footerHeight ? footerHeight - 1 : 0;
   const { cx, classes } = useStyles();
+
+  // Rolder
+  const { height: viewPortHeight } = useViewportSize()
+  const [scrollHeight, setHeight] = useState(0)
+  useEffect(() => {
+    if (viewPortHeight > 0) {
+      const s = scrollAreaProps as any
+      const offset = s?.scrollAreaBottomOffset
+      const scrollHeight = viewPortHeight - offset
+      setHeight(scrollHeight)
+    }
+  }, [viewPortHeight])
+
   return (
     <ScrollArea
       {...scrollAreaProps}
@@ -109,6 +124,7 @@ export default function DataTableScrollArea({
       classNames={{ root: classes.root, scrollbar: classes.scrollbar, thumb: classes.thumb, corner: classes.corner }}
       styles={{ scrollbar: { marginTop: headerHeight, marginBottom: bottom } }}
       onScrollPositionChange={onScrollPositionChange}
+      mah={scrollHeight - 1} //Rolder
     >
       {children}
       <Box
